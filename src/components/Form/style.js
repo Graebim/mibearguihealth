@@ -1,0 +1,91 @@
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+    formContext:{
+        flex:1,
+        backgroundColor:"#ffffff",
+        borderTopLeftRadius:31,
+        borderTopRightRadius:31,
+        alignItems:"center",
+        paddingTop:30,
+    },
+    form:{
+        width:"100%",
+    },
+    formLabel:{
+        color:"#000000",
+        fontSize:18,
+        paddingLeft:20,
+    },
+    input:{
+        width:"90%",
+        borderRadius:50,
+        backgroundColor:"#f6f6f6",
+        height:40,
+        margin:12,
+        paddingLeft:10,
+    },
+    buttonCalculator:{
+        borderRadius:50,
+        alignItems:"center",
+        justifyContent:"center",
+        width:"90%",
+        backgroundColor:"#FF0043",
+        paddingTop:14,
+        paddingBottom:14,
+        marginLeft:12,
+        margin:30,
+
+    },
+    textButtonCalculator:{
+        fontSize:20,
+        color:"#ffffff",
+    },
+    resultImx:{
+        flex:1,
+        marginTop:30,
+        paddingTop:15,
+        borderRadius:50,
+        alignItems:"center",
+        width:"100%",
+    },
+    numberImc:{
+        fontSize:50,
+        color:"#FF0043",
+        fontWeight:"bold",
+    },
+    information:{
+        fontSize:18,
+        color:"#FF0043",
+        fontWeight:"bold"
+    },
+    errorMessage:{
+        fontSize:12,
+        color:"red",
+        fontWeight:"bold",
+        paddingLeft:20,
+    },
+    boxSharebutton:{
+        width:"100%",
+        alignItems:"center",
+        marginBottom:10,
+    },
+    shared:{
+        backgroundColor:"#1877f2",
+        borderRadius:50,
+        paddingBottom:5,
+        paddingTop:5,
+    },
+    sharedText:{
+        color:"#ffffff",
+        fontWeight:"bold",
+        paddingHorizontal:30,
+
+    },
+    exhibitionResultImc:{
+        width:"100%",
+        height:"50%",
+    }
+});
+
+export default styles
