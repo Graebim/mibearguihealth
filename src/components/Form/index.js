@@ -6,7 +6,9 @@ import {
   TouchableOpacity, 
   Vibration,
   Pressable,
-  Keyboard, } from "react-native";
+  Keyboard,
+  FlatList,
+} from "react-native";
 import ResultImc from "./Resultimc/";
 import styles from "./style";
 
@@ -17,20 +19,12 @@ export default function Form(props) {
   const [imc, setImc] = useState(null);
   const [textButton, setTextButton] = useState("Calcular");
   const [errorMessage, setErroMessage] = useState(null);
-
-  const heightInputRef = useRef(null);
-  const weightInputRef = useRef(null);
+  const [imcList, setImcList] = useState([])
 
   function imcCalculator() {
-    if (height !== null && weight !== null) {
-      const heightFloat = parseFloat(height.replace(',', '.'));
-      const weightFloat = parseFloat(weight.replace(',', '.'));
-      const imcValue = weightFloat / (heightFloat * heightFloat);
-      setImc(imcValue.toFixed(2));
-      return;
-    }
-    setImc(null);
-  }
+    let heightFormat = height.replace(",",".")
+    return setImc((weight / (heightFormat * heightFormat)).toFixed(2));
+    } 
 
   function verificationImc(){
     if(imc == null){
@@ -47,9 +41,6 @@ export default function Form(props) {
       setMessageImc("Seu imc é igual:");
       setTextButton("Calcular novamente");
       setErroMessage(null);
-
-      heightInputRef.current.blur();
-      weightInputRef.current.blur();
       
     }
     else{
@@ -72,7 +63,6 @@ export default function Form(props) {
           value={height}
           placeholder="Ex: 1.75"
           keyboardType="numeric"
-          ref={heightInputRef} 
         />
 
         <Text style={styles.formLabel}>Peso</Text>
@@ -83,7 +73,6 @@ export default function Form(props) {
           value={weight}
           placeholder="Ex: 75.365"
           keyboardType="numeric"
-          ref={weightInputRef}
         />
 
         <TouchableOpacity
